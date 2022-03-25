@@ -1,4 +1,4 @@
-const { ApolloServer, gql } = require('apollo-server-lambda');
+import { ApolloServer, gql } from 'apollo-server-lambda';
 
 const typeDefs = gql`
   type Query {
@@ -11,9 +11,9 @@ const typeDefs = gql`
 `;
 
 const resolvers = {
-  Query: {
-    user: () => ({ id: 123, name: 'John Doe' })
-  }
+    Query: {
+        user: () => ({ id: 123, name: 'John Doe' })
+    }
 };
 
 const server = new ApolloServer({ typeDefs, resolvers });
