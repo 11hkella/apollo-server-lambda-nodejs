@@ -1,13 +1,11 @@
-const { makeUserService } = require('./services/user');
+import { songService } from "./services/song";
 
-const graphqlContext = ({ event }) => {
+export const graphqlContext = ({ event }) => {
   if (!event) {
     throw new Error('Lambda event is missing!!');
   }
 
   return {
-    UserService: makeUserService({ event })
+    SongService: songService({ event })
   };
 };
-
-module.exports = { graphqlContext };

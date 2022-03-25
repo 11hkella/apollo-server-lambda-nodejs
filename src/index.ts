@@ -1,21 +1,13 @@
 import { ApolloServer, gql } from 'apollo-server-lambda';
+import { graphqlSchema } from './gql-schema';
+import { graphqlContext } from './gql-context';
 
-const typeDefs = gql`
-  type Query {
-    user: User
-  }
-  type User {
-    id: ID
-    name: String
-  }
-`;
+const { typeDefs, resolvers } = graphqlSchema()
 
-const resolvers = {
-    Query: {
-        user: () => ({ id: 123, name: 'John Doe' })
-    }
-};
-
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+    context: graphqlContext
+});
 
 exports.handler = server.createHandler();

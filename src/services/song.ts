@@ -1,4 +1,4 @@
-const makeUserService = ({ event }) => ({
+export const songService = ({ event }) => ({
   userById: ({ id }) => ({
     id,
     name: 'John Doe'
@@ -8,5 +8,3 @@ const makeUserService = ({ event }) => ({
     name
   })
 });
-
-module.exports = { makeUserService };
