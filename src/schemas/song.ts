@@ -5,27 +5,27 @@ export const typeDefs = gql`
     song: String
     artist: String
     songReleaseDate: String
-    playCount: Number;
-    metricA: Number;
-    metricB: Number;
-    metricC: Number;
-    metricD: Number;
-    metricE: Number;
-    metricF: Number;
-    metricG: Number;
-    metricH: Number;
-    metricI: Number;
-    metricJ: Number;
-    metricK: Number;
-    metricL: Number;
-    metricM: Number;
-    metricN: Number;
-    metricO: Number;
-    metricP: Number;
+    playCount: Int
+    metricA: Int
+    metricB: Int
+    metricC: Int
+    metricD: Int
+    metricE: Int
+    metricF: Int
+    metricG: Int
+    metricH: Int
+    metricI: Int
+    metricJ: Int
+    metricK: Int
+    metricL: Int
+    metricM: Int
+    metricN: Int
+    metricO: Int
+    metricP: Int
   }
 
   extend type Query {
-    songs: Song[]
+    songs: [Song]
   }
 `;
 

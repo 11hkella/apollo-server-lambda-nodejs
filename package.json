@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "dev": "sam local start-api --template-file cloudformation.yml"
+    "start": "sam build --beta-features && sam local start-api"
   },
   "dependencies": {
     "apollo-server-lambda": "^2.13.1",
@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@types/graphql": "^14.5.0",
+    "esbuild": "^0.14.27",
     "typescript": "^4.6.3"
   }
 }
