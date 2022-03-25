@@ -4,14 +4,15 @@
   "description": "graphQL server written in node and deployed to AWS lambda",
   "main": "index.js",
   "repository": "https://github.com/adikari/apollo-server-lambda-nodejs.git",
-  "author": "subash <me@subash.com.au>",
+  "author": "hk",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "sam build --beta-features && sam local start-api"
+    "start": "cd .. && sam build --beta-features && sam local start-api"
   },
   "dependencies": {
     "apollo-server-lambda": "^2.13.1",
+    "aws-sdk": "^2.1100.0",
     "graphql": "^15.0.0",
     "lodash.merge": "^4.6.2"
   },

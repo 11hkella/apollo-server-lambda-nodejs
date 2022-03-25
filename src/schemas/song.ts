@@ -1,4 +1,5 @@
-const { gql } = require('apollo-server-lambda');
+import { gql } from 'apollo-server-lambda';
+import { Song } from '../services/song';
 
 export const typeDefs = gql`
   type Song {
@@ -29,8 +30,16 @@ export const typeDefs = gql`
   }
 `;
 
+interface SongContext {
+  SongService: SongService;
+}
+
+interface SongService {
+  songs(): Song[];
+}
+
 export const resolvers = {
   Query: {
-    songs: (_, { }, { SongService }) => SongService.songs()
+    songs: async (_: undefined, { }, { SongService }: SongContext) => await SongService.songs()
   },
 };

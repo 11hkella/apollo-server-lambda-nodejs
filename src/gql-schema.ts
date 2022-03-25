@@ -1,7 +1,3 @@
-// const merge = require('lodash.merge');
-// const rootSchema = require('./schemas/root');
-// const userSchema = require('./schemas/user');
-
 import merge from 'lodash.merge';
 import * as rootSchema from './schemas/root';
 import * as songSchema from './schemas/song';
